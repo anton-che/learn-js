@@ -1,2 +1,2 @@
 # learn-js
-Learn javascript
+Project to learn JavaScript
