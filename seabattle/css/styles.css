@@ -1,0 +1,100 @@
+.game-tbl {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.game-tbl-left {
+  margin: auto;
+}
+
+.game-tbl-right {
+  margin: auto;
+}
+
+.half {
+  float: left;
+  width: 100%;
+  padding: 0 8px;
+}
+
+.game-tbl-cell-child td div, 
+.game-tbl-cell-child th div {
+  min-height: 32px;
+  min-width: 32px;
+  max-height: 48px;
+  max-width: 48px;
+  padding: 0px;
+}
+
+.game-tbl-cell-child-sz td div, 
+.game-tbl-cell-child-sz th div {
+  height: 8vw;
+  width: 8vw;
+}
+
+@media screen and (min-width: 830px) {
+  .game-tbl-left {
+    margin: 0px 0px 0px auto;
+  }
+  
+  .game-tbl-right {
+    margin: 0px auto 0px 0px;
+  } 
+  
+  .half {
+    width: 49.99999%;
+  } 
+  
+  .game-tbl-cell-child-sz td div, 
+  .game-tbl-cell-child-sz th div {
+    height: 4vw;
+    width: 4vw;
+  }             
+}
+
+.game-tbl-brd td, .game-tbl-brd th {
+  border-left: 1px solid #ddd;
+}
+
+.game-tbl-brd tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.game-tbl-cell td, .game-tbl-cell th {
+  padding: 0px;
+}
+
+.game-tbl-hdr {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.game-tbl-hover td > div:hover {
+  border: 1px solid #3f51b5;
+  z-index: 2;
+}
+
+.padding-8 {
+  padding: 8px;
+}
+
+.margin-0 {
+  margin: 0px;
+}
+
+.bckgr-img {
+  background-image: url('../img/ship_w.png');
+  background-repeat: no-repeat;
+  background-position: left; 
+  background-size: contain;
+}
+
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+}

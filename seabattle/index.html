@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/w3-theme-indigo.css">
+    <link rel="stylesheet" href="css/font-awesome-all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>Морской бой</title>
+  </head>
+  <body>
+    <script src="script/lib.js" charset="utf-8"></script>
+    <script src="script/game.js" defer charset="utf-8"></script>
+    
+    <header class="w3-container w3-theme w3-padding bckgr-img" id="myHeader">
+        <i class="fa fa-bars w3-xlarge w3-button w3-theme" onclick=""></i> 
+        <div class="w3-center">
+          <h4>САМАЯ "КЛАССНАЯ" ИГРА ПРОШЛОГО ВЕКА</h4>
+          <h1 class="w3-xxxlarge">МОРСКОЙ БОЙ</h1>
+          <div class="w3-padding-32">
+            <a href="#playground" class="w3-button w3-xlarge w3-theme-l2" onclick="">СТАРТ</a>
+          </div>
+        </div>
+    </header>
+
+    <div id="playground" class="w3-row-padding w3-center w3-margin-top">
+      <div class="half">
+        <div class="w3-responsive padding-8">
+          <table id="leftTable" 
+                  class="w3-text-theme w3-card 
+                        game-tbl game-tbl-left game-tbl-brd 
+                        game-tbl-cell game-tbl-cell-child game-tbl-cell-child-sz 
+                        game-tbl-hdr game-tbl-hover">
+            <caption class="padding-8 w3-large">Ваше поле</caption>                                                                                                                                                                                                                                                                                                                                                                                                            
+          </table>
+        </div>           
+      </div>
+      <div class="half">
+          <div class="w3-responsive padding-8">
+            <table id="rightTable" 
+                    class="w3-text-theme w3-card 
+                          game-tbl game-tbl-right game-tbl-brd 
+                          game-tbl-cell game-tbl-cell-child game-tbl-cell-child-sz 
+                          game-tbl-hdr game-tbl-hover">
+              <caption class="padding-8 w3-large">Поле противника</caption>                                                                                                                                                                                                                                                                                                                                                                                                              
+            </table>           
+          </div>         
+      </div>      
+    </div>
+
+    <footer class="w3-container w3-theme w3-padding w3-margin">
+      <p class="w3-right-align w3-small">&copy; Чекмарев Антон, 2019</p>
+    </footer>
+  </body>
+</html>
