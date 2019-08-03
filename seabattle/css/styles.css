@@ -17,17 +17,18 @@
   padding: 0 8px;
 }
 
-.game-tbl-cell-child td div, 
-.game-tbl-cell-child th div {
+.game-tbl-cell-child td > div, 
+.game-tbl-cell-child th > div {
   min-height: 32px;
   min-width: 32px;
   max-height: 48px;
   max-width: 48px;
   padding: 0px;
+  position: relative;
 }
 
-.game-tbl-cell-child-sz td div, 
-.game-tbl-cell-child-sz th div {
+.game-tbl-cell-child-sz td > div, 
+.game-tbl-cell-child-sz th > div {
   height: 8vw;
   width: 8vw;
 }
@@ -45,8 +46,8 @@
     width: 49.99999%;
   } 
   
-  .game-tbl-cell-child-sz td div, 
-  .game-tbl-cell-child-sz th div {
+  .game-tbl-cell-child-sz td > div, 
+  .game-tbl-cell-child-sz th > div {
     height: 4vw;
     width: 4vw;
   }             
@@ -68,11 +69,6 @@
   text-align: center;
   font-weight: bold;
   font-size: 16px;
-}
-
-.game-tbl-hover td > div:hover {
-  border: 1px solid #3f51b5;
-  z-index: 2;
 }
 
 .padding-8 {
@@ -97,4 +93,82 @@
   -moz-user-select: none;      /* Firefox */
   -ms-user-select: none;       /* Internet Explorer/Edge */
   user-select: none;           /* Non-prefixed version, currently not supported by any browser */
+}
+
+.cursor-none {
+  cursor: none;
+}
+
+.crosshairs {
+  fill: red;
+  fill-opacity: 0.2;
+  position: absolute;
+}
+
+.ship {
+  fill: rgba(0, 0, 255, 0.2);
+  width: 100%;
+  height: 100%;
+  /*z-index: 3;*/
+}
+
+.ship-d {
+  fill: rgba(0, 255, 0, 0.2);
+  /*z-index: 3;*/
+  position: absolute;
+  top: -1000px;
+}
+
+.ship-1w, .ship-1h {
+  height: 100%;
+  width: 100%;
+}
+
+.ship-2h {
+  height: 200%;
+  width: 100%;
+}
+
+.ship-3h {
+  height: 300%;
+  width: 100%;
+}
+
+.ship-4h {
+  height: 400%;
+  width: 100%;
+}
+
+.ship-2w {
+  height: 100%;
+  width: 200%;
+}
+
+.ship-3w {
+  height: 100%;
+  width: 300%;
+}
+
+.ship-4w {
+  height: 100%;
+  width: 400%;
+}
+
+.flame-animation {
+  transform-origin:center bottom;
+  animation-name: flicker;
+  animation-duration: 3ms;
+  animation-delay: 200ms;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;        
+}
+
+@keyframes flicker{
+  0%   {transform: rotate(-1deg);}
+  20%  {transform: rotate(1deg);}
+  40%  {transform: rotate(-1deg);}
+  60%  {transform: rotate(1deg) scaleY(1.04);}
+  80%  {transform: rotate(-2deg) scaleY(0.92);}
+  100% {transform: rotate(1deg);}
 }

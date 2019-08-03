@@ -28,23 +28,24 @@
     <div id="playground" class="w3-row-padding w3-center w3-margin-top">
       <div class="half">
         <div class="w3-responsive padding-8">
-          <table id="leftTable" 
-                  class="w3-text-theme w3-card 
+          <table class="w3-text-theme w3-card 
                         game-tbl game-tbl-left game-tbl-brd 
                         game-tbl-cell game-tbl-cell-child game-tbl-cell-child-sz 
-                        game-tbl-hdr game-tbl-hover">
-            <caption class="padding-8 w3-large">Ваше поле</caption>                                                                                                                                                                                                                                                                                                                                                                                                            
+                        game-tbl-hdr">
+            <caption class="padding-8 w3-large">Ваше поле</caption>
+            <tbody id="userTable"></tbody>                                                                                                                                                                                                                                                                                                                                                                                                            
           </table>
         </div>           
       </div>
       <div class="half">
           <div class="w3-responsive padding-8">
-            <table id="rightTable" 
-                    class="w3-text-theme w3-card 
+            <table class="w3-text-theme w3-card 
                           game-tbl game-tbl-right game-tbl-brd 
                           game-tbl-cell game-tbl-cell-child game-tbl-cell-child-sz 
-                          game-tbl-hdr game-tbl-hover">
-              <caption class="padding-8 w3-large">Поле противника</caption>                                                                                                                                                                                                                                                                                                                                                                                                              
+                          game-tbl-hdr">
+              <caption class="padding-8 w3-large">Поле противника
+              </caption>
+              <tbody id="compTable" class="cursor-none"></tbody>                                                                                                                                                                                                                                                                                                                                                                                                              
             </table>           
           </div>         
       </div>      
@@ -53,5 +54,51 @@
     <footer class="w3-container w3-theme w3-padding w3-margin">
       <p class="w3-right-align w3-small">&copy; Чекмарев Антон, 2019</p>
     </footer>
+
+    <svg style="display:none">
+      <defs>
+        <symbol id="ship">
+          <rect x="0" y="0" width="100%" height="100%" rx="50" />
+        </symbol>
+        <symbol id="crosshairs" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="6" >
+            <animate begin="click" attributeName="r" values="6;1;6" dur="500ms" repeatCount="1" />
+            <animate begin="click" attributeName="fill-opacity" values="0.2;1;0.2" dur="500ms" repeatCount="1" />
+          </circle>
+          <polygon points="10,10 30,10 30,0 0,0 0,30 10,30 " />
+          <polygon points="90,10 70,10 70,0 100,0 100,30 90,30 " />
+          <polygon points="10,90 30,90 30,100 0,100 0,70 10,70 " />
+          <polygon points="90,90 70,90 70,100 100,100 100,70 90,70 " />
+        </symbol> 
+      </defs>
+    </svg>
+
+    <svg id="cursor" class="crosshairs cursor-none" style="display:none">
+      <use href="#crosshairs"/>
+    </svg>
+
+    <svg id="flame" viewBox="0, 0, 100, 100" height="100%" width="100%"
+         class="flame-animation" style="display: none; position: absolute; top: 0px; left: 0px">
+      <defs>
+          <path id="p1" d="M 50 0 A 50 50 0 1 0 100 50 L 100 0 Z" />
+          <path id="p2" d="M 75 100 A 25 25 0 0 0 25 100 Z" />
+          <filter id="f1">
+            <feGaussianBlur stdDeviation="5"/>
+          </filter>
+      </defs>
+
+      <use href="#p1" fill="orangered" filter="url(#f1)"
+           transform="matrix(0.82, 0, 0, 0.82, 9, 18) rotate(-45 50 50)"/>
+      <use href="#p1" fill="orange" filter="url(#f1)"  
+           transform="matrix(0.66, 0, 0, 0.66, 17, 34) rotate(-45 50 50)"/>
+      <use href="#p1" fill="gold" filter="url(#f1)"  
+           transform="matrix(0.52, 0, 0, 0.52, 24, 48) rotate(-45 50 50)"/>
+      <use href="#p1" fill="white" filter="url(#f1)"  
+           transform="matrix(0.42, 0, 0, 0.42, 29, 58) rotate(-45 50 50)"/> 
+      <use href="#p2" fill="slateblue" fill-opacity="0.4" filter="url(#f1)"
+           transform="matrix(0.5, 0, 0, 0.4, 25, 60)"/>
+      <use href="#p2" fill="black" fill-opacity="0.6" filter="url(#f1)"
+          transform="matrix(0.6, 0, 0, 0.2, 20, 80)"/>           
+    </svg>
   </body>
 </html>
