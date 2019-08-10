@@ -95,6 +95,14 @@
   user-select: none;           /* Non-prefixed version, currently not supported by any browser */
 }
 
+.game-cell-drop-en {
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+.game-cell-drop-dis {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
 .cursor-none {
   cursor: none;
 }
@@ -106,14 +114,16 @@
 }
 
 .ship {
-  fill: rgba(0, 0, 255, 0.2);
+  fill: rgb(0, 0, 255);
+  fill-opacity: 0.2;
   width: 100%;
   height: 100%;
   /*z-index: 3;*/
 }
 
 .ship-d {
-  fill: rgba(0, 255, 0, 0.2);
+  fill: rgb(128, 128, 128);
+  fill-opacity: 0.2;
   /*z-index: 3;*/
   position: absolute;
   top: -1000px;
@@ -171,4 +181,49 @@
   60%  {transform: rotate(1deg) scaleY(1.04);}
   80%  {transform: rotate(-2deg) scaleY(0.92);}
   100% {transform: rotate(1deg);}
+}
+
+.container-w {
+  position: absolute;
+  height: 200%;
+  width: 200%;
+  top: -50%;
+  left: -50%;
+}
+
+.container-w .delay1 {
+  animation: waves 1.5s linear .1s;
+}
+.container-w .delay2 {
+  animation: waves 1.5s linear .4s forwards;
+}
+.container-w .delay3 {
+  animation: waves 1.5s linear .7s forwards;
+}
+.container-w .delay4 {
+  animation: waves 1.5s linear 1.2s forwards;
+}
+
+.circle-w {
+  fill: #dde;
+}
+
+@keyframes waves {
+  0% {
+    transform: scale(1);
+    transform-origin:center;
+    fill-opacity: 1;
+  }
+  
+  99% {
+    transform: scale(8);
+    transform-origin:center;
+    fill-opacity: 0;
+  }
+
+  100% {
+    transform: scale(0);
+    transform-origin:center;
+    fill-opacity: 0;
+  }
 }
