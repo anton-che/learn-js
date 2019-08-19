@@ -14,8 +14,41 @@
     <script src="script/lib.js" charset="utf-8"></script>
     <script src="script/game.js" defer charset="utf-8"></script>
     
+    <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-padding help" 
+         style="display:none" id="mySidebar">
+      <i class="fa fa-times w3-xxxlarge w3-button w3-text-theme" 
+         onclick="doc.get('mySidebar').style.display = 'none'"></i>
+      <h1 class="w3-xxxlarge w3-text-theme w3-center">Правила игры</h1>
+      <p class="w3-xlarge w3-text-theme">
+        «Морской бой» — игра для двух участников, в которой игроки 
+        по очереди называют координаты на неизвестной им карте соперника. 
+        Если у соперника по этим координатам имеется корабль 
+        (координаты заняты), то корабль или его часть «топится», а попавший 
+        получает право сделать ещё один ход. <br>
+        Цель игрока — первым потопить все корабли противника.
+      </p>
+      <p class="w3-xlarge w3-text-theme">
+        Размещаются: <br>
+        1 корабль — ряд из 4 клеток («четырёхпалубный»; линкор) <br>
+        2 корабля — ряд из 3 клеток («трёхпалубные»; крейсера) <br>
+        3 корабля — ряд из 2 клеток («двухпалубные»; эсминцы) <br>
+        4 корабля — 1 клетка («однопалубные»; торпедные катера) <br>
+        При размещении корабли не могут касаться друг друга сторонами и углами.
+      </p>
+      <h1 class="w3-xxxlarge w3-text-theme w3-center">Управление</h1>
+      <p class="w3-xlarge w3-text-theme">
+        Сначала корабли размещаются на игровых полях случайно. <br> 
+        Пользователь может перетаскивать корабли по своему полю и 
+        переворачивать двойным щелчком на первой ячейке, 
+        до первого своего хода. <br>  
+        Пользователь ходит первым. <br>  
+        Кнопка СТАРТ начинает игру заново.
+      </p>
+    </nav>
+
     <header class="w3-container w3-theme w3-padding bckgr-img" id="myHeader">
-        <i class="fa fa-bars w3-xlarge w3-button w3-theme" onclick=""></i> 
+        <i class="fa fa-bars w3-xlarge w3-button w3-theme" 
+           onclick="doc.get('mySidebar').style.display = 'block'"></i> 
         <div class="w3-center">
           <h4>САМАЯ "КЛАССНАЯ" ИГРА ПРОШЛОГО ВЕКА</h4>
           <h1 class="w3-xxxlarge">МОРСКОЙ БОЙ</h1>
